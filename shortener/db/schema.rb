@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130903162336) do
+ActiveRecord::Schema.define(version: 20130903171518) do
 
   create_table "urls", force: true do |t|
     t.string   "short"
@@ -19,5 +19,7 @@ ActiveRecord::Schema.define(version: 20130903162336) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "urls", ["short"], name: "index_urls_on_short", unique: true
 
 end
