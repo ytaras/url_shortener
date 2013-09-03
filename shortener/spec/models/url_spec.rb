@@ -19,6 +19,9 @@ describe Url do
   describe 'validators' do
     it { should validate_presence_of :full }
     it { should ensure_length_of(:short).is_equal_to(6) }
-    # TODO Validate length of :short
+    it 'should validate full is a URL' do
+      # TODO Use FactoryGirl
+      Url.new(full: 'not an uri', short: '123456').should_not be_valid
+    end
   end
 end

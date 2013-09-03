@@ -8,7 +8,7 @@ class UrlController < ApplicationController
   end
 
   def create
-    @created = Url.generate(params[:url]) # TODO XSS possible
+    @created = Url.generate(params[:url])
     redirect_to url_url(@created)
   end
 
