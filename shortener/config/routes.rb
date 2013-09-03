@@ -1,5 +1,7 @@
 Shortener::Application.routes.draw do
   resources :url, except: [:update, :destroy, :edit]
+  get ':id' => 'url#redirect'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

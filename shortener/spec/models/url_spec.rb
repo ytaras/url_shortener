@@ -9,6 +9,12 @@ describe Url do
       # TODO Check length is 5
     end
   end
+  describe 'scopes' do
+    it 'should find by short url' do
+      short = Url.generate('http://google.com').short
+      Url.by_short(short).first.full.should == 'http://google.com'
+    end
+  end
   describe 'validators' do
     it { should validate_presence_of :full }
     it { should validate_presence_of :short }
