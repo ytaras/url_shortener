@@ -2,7 +2,7 @@ class UrlController < ApplicationController
 
   def index
     @urls = Url.all
-    respond_to do |xf|
+    respond_to do |f|
       f.html
     end
   end

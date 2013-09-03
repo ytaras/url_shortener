@@ -1,1 +1,2 @@
-This is URL <%= @url.short %> and it leads to <%= @url.full %>
+This is URL <a href="<%= redirector_url(@url.short) %>"><%= @url.short %></a> and it leads
+to <a href="<%= @url.full%>"><%= @url.full %></a>
