@@ -6,7 +6,8 @@ describe Url do
       generated = Url.generate('http://google.com')
       generated.full.should == 'http://google.com'
       generated.short.should_not be_nil
-      # TODO Check length is 5
+      generated.short.length.should == 6 # I assume that's a
+      # reasonable tradeoff with reqs
     end
   end
   describe 'scopes' do
@@ -17,7 +18,7 @@ describe Url do
   end
   describe 'validators' do
     it { should validate_presence_of :full }
-    it { should validate_presence_of :short }
+    it { should ensure_length_of(:short).is_equal_to(6) }
     # TODO Validate length of :short
   end
 end
