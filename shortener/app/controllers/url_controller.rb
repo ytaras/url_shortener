@@ -13,7 +13,7 @@ class UrlController < ApplicationController
   end
 
   def show
-    @url = Url.load(params[:id])
+    @url = Url.find(params[:id])
     respond_to do |f|
       f.html
     end

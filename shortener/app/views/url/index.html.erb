@@ -1,0 +1,11 @@
+<ul>
+  <% @urls.each do |url| %>
+     <li><a href="<%= url_path(url) %>"><%= url.full %></a></li>
+  <% end %>
+</ul>
+
+
+<%= form_tag(url_index_path) do %>
+  Input a URL here: <%= text_field_tag :url %><br>
+  <%= submit_tag('Shorten') %>
+<% end %>

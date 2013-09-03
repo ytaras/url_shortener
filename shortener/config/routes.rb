@@ -1,5 +1,5 @@
 Shortener::Application.routes.draw do
-  resource :urls, except: [:update, :destroy]
+  resources :url, except: [:update, :destroy, :edit]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
