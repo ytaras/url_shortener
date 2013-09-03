@@ -8,4 +8,9 @@ describe Url do
       generated.short.should_not be_nil
     end
   end
+  describe 'validators' do
+    it { should validate_presence_of :full }
+    it { should validate_presence_of :short }
+    # TODO Validate length of :short
+  end
 end
